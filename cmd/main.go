@@ -3,8 +3,8 @@ package main
 import (
 	"context"
 	"encoding/json"
+	"fmt"
 	"github.com/kittenbark/tg"
-	"unicode/utf8"
 )
 
 func main() {
@@ -13,19 +13,15 @@ func main() {
 		Filter(tg.OnPrivateMessage).
 		HandleCommand("/start", tg.CommonTextReply("Hii, this bot was made with https://github.com/kittenbark/tg.")).
 		Branch(tg.OnMessage, func(ctx context.Context, upd *tg.Update) error {
-			data, err := json.MarshalIndent(upd.Message, "", "  ")
+			msgJson, err := json.MarshalIndent(upd.Message, "", "  ")
 			if err != nil {
 				return err
 			}
 
-			text := string(data)
-			_, err = tg.SendMessage(ctx, upd.Message.Chat.Id, text, &tg.OptSendMessage{
-				Entities: []*tg.MessageEntity{{
-					Type:     "pre",
-					Offset:   0,
-					Length:   int64(utf8.RuneCountInString(text)) + 2,
-					Language: "json",
-				}}})
+			_, err = tg.SendMessage(ctx, upd.Message.Chat.Id,
+				fmt.Sprintf("```json\n%s\n```", tg.EscapeParseMode(tg.ParseModeMarkdownV2, string(msgJson))),
+				&tg.OptSendMessage{ParseMode: tg.ParseModeMarkdownV2},
+			)
 			return err
 		}).
 		Start()

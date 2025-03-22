@@ -2,5 +2,7 @@ github.com/kittenbark/tg v0.0.0-20250211095949-66e12ce9750e h1:5CHof3UpIvFfdJ9KK
 github.com/kittenbark/tg v0.0.0-20250211095949-66e12ce9750e/go.mod h1:n84Rl0h0IaG+pLij7L9PSwErJCbG755uoqf3pLhw4BY=
 github.com/kittenbark/tg v0.0.0-20250214153129-c911add935d9 h1:XFFMAB9PacDqXrRTdeT1LOux0WD3Wk0nkJ2/TVaH0Qc=
 github.com/kittenbark/tg v0.0.0-20250214153129-c911add935d9/go.mod h1:n84Rl0h0IaG+pLij7L9PSwErJCbG755uoqf3pLhw4BY=
+github.com/kittenbark/tg v0.0.0-20250322070014-2bd40b9b2ddf h1:UZyvK+oQYZxM0/2A4vwsXM+HHPRSOKoRo3nPY27bo68=
+github.com/kittenbark/tg v0.0.0-20250322070014-2bd40b9b2ddf/go.mod h1:n84Rl0h0IaG+pLij7L9PSwErJCbG755uoqf3pLhw4BY=
 github.com/rivo/uniseg v0.4.7 h1:WUdvkW8uEhrYfLC4ZzdpI2ztxP1I582+49Oc5Mq64VQ=
 github.com/rivo/uniseg v0.4.7/go.mod h1:FN3SvrM+Zdj16jyLfmOkMNblXMcoc8DfTHruCPUcx88=
